@@ -1,0 +1,27 @@
+/* Vouch.css */
+.vouch-shell {
+  padding: 2rem;
+}
+
+.vouch-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vouch-image-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(12, 22, 38, 0.5);
+  border: 1px solid rgba(77, 225, 255, 0.2);
+  box-shadow: 0 0 20px rgba(77, 225, 255, 0.3);
+  backdrop-filter: blur(6px);
+}
+
+.vouch-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}

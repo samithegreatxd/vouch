@@ -1,0 +1,119 @@
+/* Gallery.css */
+
+/* Main gallery container */
+.vouch-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Individual image card */
+.vouch-image-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(12, 22, 38, 0.5); /* glass effect */
+  border: 1px solid rgba(77, 225, 255, 0.2);
+  box-shadow: 0 0 20px rgba(77, 225, 255, 0.3);
+  backdrop-filter: blur(6px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Hover effect for cards */
+.vouch-image-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(77, 225, 255, 0.6), 0 0 10px rgba(77, 225, 255, 0.3) inset;
+}
+
+/* Vouch image */
+.vouch-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid rgba(77, 225, 255, 0.15);
+}
+
+/* Vouch heading (Vouch 1, 2, 3...) */
+.vouch-heading {
+  margin: 0.5rem 0 0.3rem 0;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--accent-blue);
+  text-shadow: 0 0 6px var(--accent-glow);
+  text-align: center;
+}
+
+/* Optional uploader label */
+.vouch-uploader {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 4px rgba(77, 225, 255, 0.4);
+}
+
+/* Empty state message */
+.vouch-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  padding: 2rem 0;
+}/* Lightbox overlay */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: zoom-out;
+}
+
+/* Zoomed image */
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px var(--accent-glow);
+  cursor: grab;
+  transition: transform 0.3s ease;
+}
+
+/* Optional: prev/next arrows */
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3rem;
+  color: var(--accent-blue);
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 60px;
+  user-select: none;
+  z-index: 1000;
+}
+
+.lightbox-prev { left: 2rem; }
+.lightbox-next { right: 2rem; }
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  box-shadow: 0 0 20px var(--accent-glow);
+}
