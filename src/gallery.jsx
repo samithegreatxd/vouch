@@ -64,7 +64,7 @@ const Gallery = ({ onBack }) => {
 
       <div className="vouch-gallery">
         {images.length === 0 && (
-          <p className="vouch-empty">No photos uploaded yet.</p>
+          <p className="vouch-empty">Loading...</p>
         )}
         {images.map((img, idx) => (
           <div
